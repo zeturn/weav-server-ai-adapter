@@ -40,7 +40,7 @@ class DbCredentialStore:
         from weav_server.models.sql.api_key import ApiKeySQL
 
         stmt = select(ApiKeySQL).where(
-            (func.lower(ApiKeySQL.provider) == provider) & (ApiKeySQL.is_active == True)
+            (func.lower(ApiKeySQL.provider) == provider) & ApiKeySQL.is_active.is_(True)
         )
         if tenant:
             stmt = stmt.where(ApiKeySQL.tenant == tenant)

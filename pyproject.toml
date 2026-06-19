@@ -14,5 +14,17 @@ dependencies = [
   "weav-ai-runtime @ git+https://github.com/zeturn/weav-ai-runtime.git@main",
 ]
 
+[project.optional-dependencies]
+dev = [
+  "build>=1.2.1",
+  "pytest>=7.4.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.build.targets.wheel]
 packages = ["weav_server_ai_adapter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
