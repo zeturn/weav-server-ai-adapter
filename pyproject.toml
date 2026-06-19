@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling>=1.21.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "weav-server-ai-adapter"
+version = "0.1.0"
+description = "Weav server adapter for reusable WeavInt AI runtime contracts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "WeavInt Authors" }]
+dependencies = [
+  "weav-ai-runtime @ git+https://github.com/zeturn/weav-ai-runtime.git@main",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["weav_server_ai_adapter"]
